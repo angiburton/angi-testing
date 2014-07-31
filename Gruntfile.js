@@ -79,14 +79,28 @@ module.exports = function(grunt) {
 
     // Before generating any new files,
     // remove any previously-created files.
-    clean: ['<%= config.dist %>/**/*.{html,xml}']
+    clean: ['<%= config.dist %>/**/*.{html,xml}'],
 
+
+    buildcontrol: {
+      options: {
+        commit: true,
+        push: true
+      },
+      ghpages: {
+        options: {
+          remote: 'git@github.com:jjkiesch/angi-testing.git',
+          branch: 'gh-pages'
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-build-control');
 
   grunt.registerTask('server', [
     'clean',
