@@ -89,7 +89,7 @@ module.exports = function(grunt) {
       },
       ghpages: {
         options: {
-          remote: 'git@github.com:jjkiesch/angi-testing.git',
+          remote: 'git@github.com:angiburton/angi-testing.git',
           branch: 'gh-pages'
         }
       }
